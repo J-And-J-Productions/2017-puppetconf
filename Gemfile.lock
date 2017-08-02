@@ -1,0 +1,68 @@
+PATH
+  remote: gems
+  specs:
+    aws_serverspec_helpers (0.1.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    aws-sdk (2.10.21)
+      aws-sdk-resources (= 2.10.21)
+    aws-sdk-core (2.10.21)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.10.21)
+      aws-sdk-core (= 2.10.21)
+    aws-sigv4 (1.0.1)
+    diff-lcs (1.3)
+    jmespath (1.3.1)
+    multi_json (1.12.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.1.0)
+    net-telnet (0.1.1)
+    netaddr (1.5.1)
+    require_all (1.4.0)
+    rspec (3.6.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-its (1.2.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+    rspec-mocks (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
+    serverspec (2.39.1)
+      multi_json
+      rspec (~> 3.0)
+      rspec-its
+      specinfra (~> 2.68)
+    serverspec-aws (0.1.2)
+      aws-sdk (~> 2)
+      netaddr (~> 1.5)
+      require_all (~> 1)
+      serverspec (~> 2)
+    sfl (2.3)
+    specinfra (2.70.0)
+      net-scp
+      net-ssh (>= 2.7, < 5.0)
+      net-telnet
+      sfl
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws_serverspec_helpers (= 0.1.3)!
+  rspec
+  serverspec-aws
+
+BUNDLED WITH
+   1.15.1
