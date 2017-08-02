@@ -8,7 +8,6 @@
   "project_page": null,
   "issues_url": null,
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":" >= 4.14.0"},
-    {"name":"puppetlabs-apache","version_requirement":" >= 0.9.0"}
+    {"name":"puppetlabs-apache","version_requirement":" >= 2.0.0"}
   ]
 }
