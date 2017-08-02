@@ -8,5 +8,11 @@ namespace :spec do
     t.pattern = Dir.glob('./test/aws_integration/*_spec.rb')
     t.rspec_opts = rspec_options
   end
+
+  desc 'Serverspec'
+  RSpec::Core::RakeTask.new(:serverspec) do |t|
+    t.pattern = Dir.glob('./test/serverspec/*_spec.rb')
+    t.rspec_opts = rspec_options
+  end
 end
 
