@@ -31,7 +31,9 @@ describe 'Public route table' do
     end
 
     it 'should route local traffic within the vpc' do
-      expect(routes['0.0.0.0/0']).to eq('igw-e57d5d83')
+      # in reality this would be configured or pulled using the aws sdk. We're going to
+      # do a loose match here for demo purposes
+      expect(routes['0.0.0.0/0']).to match(/igw-.+/)
     end
   end
 end
