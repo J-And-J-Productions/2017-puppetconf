@@ -73,6 +73,22 @@ resource "aws_route_table_association" "secondary" {
   route_table_id = "${aws_route_table.public_route_table.id}"
 }
 
+// Create a template to use as a user_data script on our web server
+data "template_file" "bootstrap" {
+  template = <<EOF
+#!/bin/bash
+
+sudo apt update
+sudo apt install unzip puppet --assume-yes
+wget https://github.com/jessiepuls/2017-08-aws-meetup/archive/master.zip
+unzip master.zip
+tar czvf master.tar.gz 2017-08-aws-meetup-master/
+sudo puppet module install master.tar.gz
+sudo puppet apply -v -e "include awsapache"
+
+EOF
+}
+
 // Create an ec2 instance to be used as our web server
 resource "aws_instance" "web" {
   ami                         = "ami-cb1d41b0"
@@ -82,6 +98,7 @@ resource "aws_instance" "web" {
   key_name                    = "personal_aws_ssh_key"
   vpc_security_group_ids      = ["${aws_security_group.main.id}"]
   depends_on                  = ["aws_internet_gateway.gw"]
+  user_data                   = "${data.template_file.bootstrap.rendered}"
 
 tags {
     Name = "2017-08-AWS-MEETUP"
