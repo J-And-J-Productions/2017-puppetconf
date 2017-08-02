@@ -1,0 +1,35 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+  forward:
+    - 80:80
+  customize:
+    cpus: 2
+    memory: 2048
+
+provisioner:
+  name: puppet_apply
+  manifests_path: test
+  files_path: files
+  modules_path: modules
+  puppet_apt_collections_repo: "http://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb"
+  puppet_verbose: false
+  puppet_debug: false
+  require_puppet_collections: true
+  require_chef_for_busser: false
+
+verifier:
+  ruby_bindir: '/opt/puppetlabs/puppet/bin'
+
+platforms:
+  - name: ubuntu-16.04
+    driver_config:
+      use_cache: true
+      image: solita/ubuntu-systemd-ssh
+      run_options: '--security-opt seccomp=unconfined --stop-signal=SIGRTMIN+3 --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro'
+      run_command: '/sbin/init'
+
+
+suites:
+  - name: awsapache

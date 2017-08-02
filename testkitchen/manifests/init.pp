@@ -1,0 +1,4 @@
+class awsapache (
+){
+  class { 'apache': }
+}

@@ -1,0 +1,11 @@
+---
+version: 5
+defaults:
+  datadir: "/var/lib/hiera"
+  data_hash: yaml_data
+
+hierarchy:
+  - name:  "Nginx"
+    path: "environments/production/awsapache.yaml"
+  - name: "common"
+    path: "common.yaml"
