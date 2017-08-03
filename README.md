@@ -28,7 +28,7 @@ Also inside of the environment directory here are the commands that will help yo
 
 If you'd like to experiment with testing puppet modules you will run these commands inside of the testkitchen directory
 
-    rake -T          # to view the available rake tasks
+    bundle install   # will install the necessary gems for running tests (assumes you've installed bundler)
     kitchen converge # to "assemble" your testing environment. This will stand up an environment as defined by .kitchen.yml and apply your the puppet module to it.
     kitchen verify   # to run the tests in the included test suite (located within the test directory)
     kitchen login    # to connect to the running environment. This can be good for debugging.
