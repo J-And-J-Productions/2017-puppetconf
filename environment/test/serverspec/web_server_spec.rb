@@ -1,7 +1,7 @@
 require_relative 'serverspec_helper'
 require 'aws_serverspec_helpers'
 
-set :host, '52.90.44.178'
+set :host, '!!!INSERT YOUR HOST HERE!!!'
 
 describe 'web server' do
   describe package('puppet') do
