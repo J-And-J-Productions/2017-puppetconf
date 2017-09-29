@@ -1,6 +1,6 @@
-# August 2017 Des Moines AWS Meetup
+# September 2017 Prairie Code
 
-The slides from this presentation are committed in both [pdf](2017-08-02-AWS-Meetup.pdf) and [powerpoint](2017-08-02-AWS-Meetup.pptx) format. Know that the powerpoint is going to provide the superior gif experience.
+The slides from this presentation are available [here](2017-09-prairiecode.pdf)
 
 ## Prerequisites
 
