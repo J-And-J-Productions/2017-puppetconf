@@ -1,6 +1,6 @@
-# September 2017 Prairie Code
+# October 2017 PuppetConf
 
-The slides from this presentation are available [here](2017-09-prairiecode.pdf)
+The slides from this presentation are available [here](2017-puppetconf.pdf)
 
 ## Prerequisites
 
