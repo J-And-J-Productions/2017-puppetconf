@@ -13,6 +13,9 @@ provisioner:
   manifests_path: test
   files_path: files
   modules_path: modules
+  hiera_data_path: data
+  hiera_data_remote_path: /var/lib/hiera
+  hiera_config_path: hiera.kitchen.yaml
   puppet_apt_collections_repo: "http://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb"
   puppet_verbose: false
   puppet_debug: false
@@ -30,6 +33,8 @@ platforms:
       run_options: '--security-opt seccomp=unconfined --stop-signal=SIGRTMIN+3 --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro'
       run_command: '/sbin/init'
 
+transport:
+  name: ssh
 
 suites:
   - name: awsapache
