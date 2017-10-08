@@ -77,21 +77,22 @@ resource "aws_route_table_association" "secondary" {
 data "template_file" "bootstrap" {
   template = <<EOF
 #!/bin/bash
-
+curl -O https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+sudo dpkg -i puppetlabs-release-pc1-xenial.deb
 sudo apt update
-sudo apt install unzip puppet --assume-yes
+sudo apt install unzip puppet-agent --assume-yes
 wget https://github.com/J-And-J-Productions/2017-puppetconf/archive/master.zip
 unzip master.zip
 tar czvf master.tar.gz 2017-puppetconf-master/
-sudo puppet module install master.tar.gz
-sudo puppet apply -v -e "include awsapache"
+sudo /opt/puppetlabs/puppet/bin/puppet module install master.tar.gz
+sudo /opt/puppetlabs/puppet/bin/puppet apply -v -e "include awsapache"
 
 EOF
 }
 
 // Create an ec2 instance to be used as our web server
 resource "aws_instance" "web" {
-  ami                         = "ami-cb1d41b0"
+  ami                         = "ami-840910ee"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   subnet_id                   = "${aws_subnet.main.id}"

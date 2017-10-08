@@ -1,9 +1,9 @@
 ---
 version: 5
-
-datadir: "hieradata"
+defaults:
+  datadir: "hieradata/"
+  data_hash: yaml_data
 
 hierarchy:
   - name: "common"
-    backend: yaml
     path: "common.yaml"

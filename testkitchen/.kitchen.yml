@@ -13,7 +13,7 @@ provisioner:
   manifests_path: test
   files_path: files
   modules_path: modules
-  hiera_data_path: data
+  hiera_data_path: kitchen-data
   hiera_data_remote_path: /var/lib/hiera
   hiera_config_path: hiera.kitchen.yaml
   puppet_apt_collections_repo: "http://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb"
