@@ -4,6 +4,7 @@ driver:
   use_sudo: false
   forward:
     - 80:80
+    - 81:81
   customize:
     cpus: 2
     memory: 2048
