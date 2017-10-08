@@ -5,6 +5,7 @@
   "summary": "A module",
   "license": "Apache-2.0",
   "source": "",
+  "data_provider": "hiera",
   "project_page": null,
   "issues_url": null,
   "dependencies": [

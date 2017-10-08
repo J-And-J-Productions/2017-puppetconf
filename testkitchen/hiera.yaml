@@ -1,8 +1,9 @@
 ---
 version: 5
 
+datadir: "hieradata"
+
 hierarchy:
-  - name:  "Nginx"
-    path: "environments/production/awsapache.yaml"
   - name: "common"
+    backend: yaml
     path: "common.yaml"
