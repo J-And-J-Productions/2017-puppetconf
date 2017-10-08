@@ -4,7 +4,7 @@ describe 'Main Security Group' do
   let(:config_file) { File.expand_path('../../../yaml/config.yaml', __FILE__) }
   let(:config) { AwsServerspecHelpers::ConfigLoader.get_environment_config(config_file) }
   let(:security_group_helper) { AwsServerspecHelpers::SecurityGroupHelper.new(config) }
-  let(:main_security_group) { security_group_helper.get_security_groups_by_tags '2017-08-AWS-MEETUP' }
+  let(:main_security_group) { security_group_helper.get_security_groups_by_tags '2017-PUPPETCONF' }
 
   it 'should allow incoming ssh' do
     tcp = get_by_port_from(main_security_group, 'ingress', 'from_port', 22)

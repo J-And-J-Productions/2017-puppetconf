@@ -1,15 +1,15 @@
 require_relative 'spec_helper'
 
-describe '2017-08-AWS-MEETUP Subnets' do
+describe '2017-PUPPETCONF Subnets' do
   # We retrieve subnets based on tags so we can pull back all subnets of a "type" and test things like
   # proper distribution across availability zones
   let(:config_file) { File.expand_path('../../../yaml/config.yaml', __FILE__) }
   let(:config) { AwsServerspecHelpers::ConfigLoader.get_environment_config(config_file) }
   let(:subnet_helper ) { AwsServerspecHelpers::SubnetHelper.new(config) }
-  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag '2017-08-AWS-MEETUP' }
+  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag '2017-PUPPETCONF' }
   let(:expected_subnet_count) { 2 }
 
-  it 'should find two subnets tagged 2017-08-AWS-MEETUP' do
+  it 'should find two subnets tagged 2017-PUPPETCONF' do
     expect(found_subnets.size).to be(expected_subnet_count)
   end
 

@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "main" {
   availability_zone = "us-east-1b"
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "secondary" {
   availability_zone = "us-east-1c"
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -40,7 +40,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = "${aws_vpc.main.id}"
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -49,7 +49,7 @@ resource "aws_route_table" "public_route_table" {
   vpc_id = "${aws_vpc.main.id}"
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -80,9 +80,9 @@ data "template_file" "bootstrap" {
 
 sudo apt update
 sudo apt install unzip puppet --assume-yes
-wget https://github.com/jessiepuls/2017-08-aws-meetup/archive/master.zip
+wget https://github.com/jessiepuls/2017-puppetconf/archive/master.zip
 unzip master.zip
-tar czvf master.tar.gz 2017-08-aws-meetup-master/
+tar czvf master.tar.gz 2017-puppetconf/
 sudo puppet module install master.tar.gz
 sudo puppet apply -v -e "include awsapache"
 
@@ -101,7 +101,7 @@ resource "aws_instance" "web" {
   user_data                   = "${data.template_file.bootstrap.rendered}"
 
 tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }
 
@@ -134,6 +134,6 @@ resource "aws_security_group" "main" {
   }
 
   tags {
-    Name = "2017-08-AWS-MEETUP"
+    Name = "2017-PUPPETCONF"
   }
 }

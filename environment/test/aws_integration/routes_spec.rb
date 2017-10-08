@@ -4,14 +4,14 @@ describe 'Public route table' do
   let(:config_file) { File.expand_path('../../../yaml/config.yaml', __FILE__) }
   let(:config) { AwsServerspecHelpers::ConfigLoader.get_environment_config(config_file) }
   let(:route_helper) { AwsServerspecHelpers::RouteHelper.new config }
-  let(:public_route_table) { route_helper.get_route_tables_by_tags '2017-08-AWS-MEETUP' }
+  let(:public_route_table) { route_helper.get_route_tables_by_tags '2017-PUPPETCONF' }
   let(:subnet_helper ) { AwsServerspecHelpers::SubnetHelper.new(config) }
-  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag '2017-08-AWS-MEETUP' }
+  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag '2017-PUPPETCONF' }
 
   context 'route table associations' do
     let(:route_table_associations) { public_route_table[0][:associations] }
 
-    it 'should find one route table with tagged 2017-08-AWS-MEETUP' do
+    it 'should find one route table with tagged 2017-PUPPETCONF' do
       expect(public_route_table.size).to be(1)
     end
 

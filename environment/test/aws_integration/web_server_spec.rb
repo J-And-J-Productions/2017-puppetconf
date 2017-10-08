@@ -1,14 +1,14 @@
 require_relative 'spec_helper'
 
-describe '2017-08-AWS-MEETUP Web Server' do
+describe '2017-PUPPETCONF Web Server' do
   let(:config_file) { File.expand_path('../../../yaml/config.yaml', __FILE__) }
   let(:config) { AwsServerspecHelpers::ConfigLoader.get_environment_config(config_file) }
   let(:ec2_instance_helper) { AwsServerspecHelpers::EC2InstanceHelper.new config }
   let(:subnet_helper) { AwsServerspecHelpers::SubnetHelper.new(config) }
-  let(:found_instances) { ec2_instance_helper.get_instance_details_by_tags '2017-08-AWS-MEETUP' }
-  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag ['2017-08-AWS-MEETUP'] }
+  let(:found_instances) { ec2_instance_helper.get_instance_details_by_tags '2017-PUPPETCONF' }
+  let(:found_subnets) { subnet_helper.get_subnet_details_by_tag ['2017-PUPPETCONF'] }
   let(:security_group_helper) { AwsServerspecHelpers::SecurityGroupHelper.new(config) }
-  let(:main_security_group) { security_group_helper.get_security_groups_by_tags '2017-08-AWS-MEETUP' }
+  let(:main_security_group) { security_group_helper.get_security_groups_by_tags '2017-PUPPETCONF' }
 
   it 'Should find one webserver' do
     expect(found_instances.size).to be(1)
