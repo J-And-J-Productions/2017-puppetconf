@@ -80,9 +80,9 @@ data "template_file" "bootstrap" {
 
 sudo apt update
 sudo apt install unzip puppet --assume-yes
-wget https://github.com/jessiepuls/2017-puppetconf/archive/master.zip
+wget https://github.com/J-And-J-Productions/2017-puppetconf/archive/master.zip
 unzip master.zip
-tar czvf master.tar.gz 2017-puppetconf/
+tar czvf master.tar.gz 2017-puppetconf-master/
 sudo puppet module install master.tar.gz
 sudo puppet apply -v -e "include awsapache"
 

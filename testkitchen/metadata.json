@@ -1,7 +1,7 @@
 {
-  "name": "awsapache",
+  "name": "puppetconf-awsapache",
   "version": "0.1.0",
-  "author": "Jessie Puls",
+  "author": "J & J Productions",
   "summary": "A module",
   "license": "Apache-2.0",
   "source": "",
