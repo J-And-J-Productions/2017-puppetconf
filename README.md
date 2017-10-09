@@ -15,7 +15,7 @@ If you have an AWS key standing up an environment is as simple as running the fo
     terraform apply   # to apply those changes
     terraform destroy # to tear the environment down
 
-## Integration Test "stufff"
+## Integration Test "stuff"
 
 Also inside of the environment directory here are the commands that will help you in running tests
 

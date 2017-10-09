@@ -27,7 +27,7 @@ describe '2017-PUPPETCONF Web Server' do
 
   it 'should use the correct ami' do
     image_ids = found_instances.map {|instance| instance[:instances][0][:image_id]}
-    expect(image_ids).to all(eq('ami-cb1d41b0'))
+    expect(image_ids).to all(eq('ami-840910ee'))
   end
 
   it 'should have the right security groups applied' do
