@@ -1,7 +1,7 @@
 ---
 version: 5
 defaults:
-  datadir: "kitchen-data/"
+  datadir: "/var/lib/hiera"
   data_hash: yaml_data
 
 hierarchy:

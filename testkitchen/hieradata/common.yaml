@@ -1,10 +1,8 @@
+# puppet module hiera.yaml
 awsapache::params::vhosts:
   www.example-1.com:
     port: 80
     docroot: "/var/www/example-1"
-  www.example-2.com:
-    port: 81
-    docroot: "/var/www/example-2"
-  www.example-3.com:
-    priority: 12
-    docroot: "/var/www/example-3"
+  # www.example-2.com:
+    # port: 81
+    # docroot: "/var/www/example-2"

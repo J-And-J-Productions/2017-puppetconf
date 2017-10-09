@@ -2,3 +2,4 @@ testkitchen/.kitchen/*
 testkitchen/.librarian/*
 testkitchen/.tmp/*
 environment/terraform.tfstate*
+master.tar.gz
