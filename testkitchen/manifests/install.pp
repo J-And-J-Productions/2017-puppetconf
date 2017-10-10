@@ -1,5 +1,7 @@
 class awsapache::install {
-  class {'apache': }
+  class {'apache':
+    default_vhost => false,
+  }
 
   file { 'install-example1-webpage':
     ensure => file,
