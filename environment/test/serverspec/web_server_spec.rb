@@ -4,7 +4,7 @@ require 'aws_serverspec_helpers'
 set :host, '!!!INSERT YOUR HOST HERE!!!'
 
 describe 'web server' do
-  describe package('puppet') do
+  describe package('puppet-agent') do
     it { should be_installed }
   end
 
@@ -16,4 +16,8 @@ describe 'web server' do
   describe port(80) do
     it { should be_listening }
   end
+
+  # describe port(81) do
+    # it { should be_listening }
+  # end
 end
