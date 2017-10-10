@@ -1,0 +1,1 @@
+variable "primary_zone_id" {}
