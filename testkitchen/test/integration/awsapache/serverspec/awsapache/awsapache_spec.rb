@@ -14,13 +14,3 @@ describe file('/etc/apache2/ports.conf') do
   it { should exist }
   it { should contain 'Listen 80' }
 end
-
-# describe file('/etc/apache2/sites-enabled/25-www.example-2.com.conf') do
-  # it { should exist }
-  # it { should contain 'ServerName www.example-2.com' }
-# end
-
-# describe file('/etc/apache2/ports.conf') do
-  # it { should exist }
-  # it { should contain 'Listen 81' }
-# end

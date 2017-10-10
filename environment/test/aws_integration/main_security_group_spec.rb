@@ -29,12 +29,4 @@ describe 'Main Security Group' do
     expect(tcp[:to_port]).to eq(80)
     expect(tcp[:ip_ranges][0][:cidr_ip]).to eq('0.0.0.0/0')
   end
-
-  # it 'should allow incoming http port 81' do
-    # tcp = get_by_port_from(main_security_group, 'ingress', 'from_port', 81)
-    # expect(tcp[:ip_protocol]).to eq('tcp')
-    # expect(tcp[:from_port]).to eq(81)
-    # expect(tcp[:to_port]).to eq(81)
-    # expect(tcp[:ip_ranges][0][:cidr_ip]).to eq('0.0.0.0/0')
-  # end
 end

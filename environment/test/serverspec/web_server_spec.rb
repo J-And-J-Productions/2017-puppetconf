@@ -1,7 +1,7 @@
 require_relative 'serverspec_helper'
 require 'aws_serverspec_helpers'
 
-set :host, '!!!INSERT YOUR HOST HERE!!!'
+set :host, 'example1.pupperlabs.com'
 
 describe 'web server' do
   describe package('puppet-agent') do
@@ -17,7 +17,11 @@ describe 'web server' do
     it { should be_listening }
   end
 
-  # describe port(81) do
-    # it { should be_listening }
-  # end
+  it 'should successfully call the test endpoint' do
+    uri = URI "http://example1.pupperlabs.com"
+    response = Net::HTTP.get_response uri
+    expect(response.code).to eql '200'
+	expect(response.body).to contain('A generic webpage')
+  end
+
 end
