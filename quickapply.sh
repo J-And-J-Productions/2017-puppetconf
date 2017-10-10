@@ -11,7 +11,7 @@ fi
 tar czf master.tar.gz testkitchen/ &> /dev/null
 
 # push to remote and run apply
-rsync master.tar.gz ubuntu@$1:
+rsync -e "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" master.tar.gz ubuntu@$1:
 
 # Run puppet apply on remote host
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@$1 'sudo /opt/puppetlabs/puppet/bin/puppet module install --force master.tar.gz'
