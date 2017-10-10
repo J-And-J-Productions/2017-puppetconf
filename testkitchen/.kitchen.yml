@@ -33,9 +33,11 @@ platforms:
       image: solita/ubuntu-systemd-ssh
       run_options: '--security-opt seccomp=unconfined --stop-signal=SIGRTMIN+3 --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro'
       run_command: '/sbin/init'
+      provision_command:
+        - sudo apt install -y rsync
 
 transport:
-  name: ssh
+  name: rsync # kitchen-sync
 
 suites:
   - name: awsapache
