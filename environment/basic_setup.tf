@@ -147,9 +147,17 @@ resource "aws_security_group" "main" {
 }
 
 // DNS for our sites
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "example1" {
   zone_id = "${var.primary_zone_id}"
   name    = "example1.pupperlabs.com"
+  type    = "A"
+  ttl     = "300"
+  records = ["${aws_instance.web.public_ip}"]
+}
+
+resource "aws_route53_record" "example2" {
+  zone_id = "${var.primary_zone_id}"
+  name    = "example2.pupperlabs.com"
   type    = "A"
   ttl     = "300"
   records = ["${aws_instance.web.public_ip}"]
