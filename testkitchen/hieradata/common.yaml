@@ -1,5 +1,12 @@
 # puppet module hiera.yaml
 awsapache::params::vhosts:
-  example1:
-    port: 80
+  example1.pupperlabs.com:
+    serveraliases:
+      - '*'
     docroot: "/var/www/example-1"
+    port: 80
+#  example2.pupperlabs.com:
+#    serveraliases:
+#      - '*'
+#    docroot: "/var/www/example-2"
+#    port: 80
