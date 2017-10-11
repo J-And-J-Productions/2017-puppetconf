@@ -28,6 +28,9 @@ GEM
     kitchen-puppet (1.45.2)
       net-ssh (~> 3)
       test-kitchen (~> 1.4)
+    kitchen-sync (2.2.0)
+      net-sftp
+      test-kitchen (>= 1.0.0)
     kitchen-verifier-serverspec (0.6.2)
       net-ssh (~> 3)
       test-kitchen (~> 1.4)
@@ -56,6 +59,8 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
     net-ssh-gateway (1.2.0)
@@ -149,6 +154,7 @@ DEPENDENCIES
   kitchen-config
   kitchen-docker
   kitchen-puppet
+  kitchen-sync
   kitchen-verifier-serverspec
   librarian-puppet
   metadata-json-lint
