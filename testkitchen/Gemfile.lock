@@ -46,7 +46,7 @@ GEM
       json
       semantic_puppet (>= 0.1.2, < 2.0.0)
       spdx-licenses (~> 1.0)
-    minitar (0.5.4)
+    minitar (0.9)
     mixlib-install (2.1.9)
       artifactory
       mixlib-shellout
